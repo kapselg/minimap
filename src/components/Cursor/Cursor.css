@@ -2,4 +2,6 @@
   position: fixed;
   height: 20px;
   z-index: 10;
+  display: none;
+  background-color: white;
 }

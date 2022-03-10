@@ -8,6 +8,10 @@ function App() {
    * @param {string} name Image placeholder text
    * @param {string} link Link or location of the image
    */
+  function Image(name, link){
+    this.name = name
+    this.link = link
+  }
   const imagesArray = [
     new Image(
       "grass",
