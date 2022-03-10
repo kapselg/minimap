@@ -1,0 +1,5 @@
+.Cursor {
+  position: fixed;
+  height: 20px;
+  z-index: 10;
+}
