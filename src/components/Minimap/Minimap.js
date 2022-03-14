@@ -20,8 +20,4 @@ const Minimap = (props) => {
   )
 };
 
-Minimap.propTypes = {};
-
-Minimap.defaultProps = {};
-
 export default Minimap;

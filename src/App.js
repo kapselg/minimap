@@ -1,7 +1,7 @@
 import Gallery from "./components/Gallery/Gallery";
 import Image from "./components/Image/Image";
 import Cursor from "./components/Cursor/Cursor";
-
+import "./App.css"
 function App() {
   /**
    *
@@ -20,6 +20,30 @@ function App() {
     new Image(
       "tree",
       "https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg"
+    ),
+    new Image(
+      "flower",
+      "https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg"
+    ),
+    new Image(
+      "flower",
+      "https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg"
+    ),
+    new Image(
+      "flower",
+      "https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg"
+    ),
+    new Image(
+      "flower",
+      "https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg"
+    ),
+    new Image(
+      "flower",
+      "https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg"
+    ),
+    new Image(
+      "flower",
+      "https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg"
     ),
     new Image(
       "flower",

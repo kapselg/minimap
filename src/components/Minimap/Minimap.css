@@ -1,1 +1,23 @@
-.Minimap {}
+.mmap{
+  position: absolute;
+  width: 60px;
+  height: 100px;
+  bottom: 10%;
+  right: 10%;
+  border: 2px white solid;
+}
+.map__full{
+  position: fixed;
+  pointer-events: none;
+  width: 90vw;
+  height: 90vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.map__image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
