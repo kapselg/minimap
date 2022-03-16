@@ -8,8 +8,12 @@ body {
 }
 
 .App{
-  width: 100vw;
-  height: 100vh;
   display: grid;
   place-items: center;
+}
+
+.filler{
+  height: 100vh;
+  background-color: gray;
+  width: 100%;
 }

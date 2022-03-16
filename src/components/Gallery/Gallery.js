@@ -4,15 +4,20 @@ import "./Gallery.css";
 import Minimap from "../Minimap/Minimap";
 import Image from "../Image/Image";
 import { gsap } from 'gsap';
+import { calculateNewValue } from "@testing-library/user-event/dist/utils";
 
 const Gallery = (props) => {
   useEffect(()=>{
-    gallery.current.addEventListener('mousewheel', handleScroll, {passive: false})
+    gallery = document.querySelector('.Gallery');
+    inner = document.querySelector('.Gallery-inner');
+    centerPx = window.visualViewport.height / 2 - inner.clientHeight / 2;
+    gsap.set(gallery, {height: inner.clientWidth - window.visualViewport.height})
+
+    scroll();
   }, [])
 
   const imageElements = [];
-  let map;
-  const gallery = useRef(null)
+  let map, inner, gallery, centerPx;
   const [currentFull, setCurrentFull] = useState({});
 
   function moveDot(thumb, e){
@@ -26,14 +31,34 @@ const Gallery = (props) => {
       display: "block"
     })
 }
-
   props.images.map(img=>{
     imageElements.push(<Image name={img.name} link={img.link} moveCursor={moveDot} changeFull={changeFull}></Image>)
   })
 
-  function handleScroll(e){
-    e.preventDefault();
-    e.target.scrollLeft += e.deltaY;
+  function isInMiddle(){
+    return gallery.getBoundingClientRect().top <= 0 && gallery.getBoundingClientRect().bottom > window.visualViewport.height
+  }
+
+  function isAtTheTop(){
+    console.log(gallery.getBoundingClientRect().top);
+    console.log(gallery.getBoundingClientRect().top > 0 );
+    return gallery.getBoundingClientRect().top > 0 
+  }
+
+  function scroll(){
+    if(isInMiddle()){
+      // console.log("in middle");
+      // current = parseFloat(delay(current, next, .5)).toFixed(2)
+      // next = window.scrollY - startingY;
+      gsap.set(inner, {position: 'fixed', top: `calc(50vh - ${inner.clientHeight / 2}px)`, bottom: "auto", transform: `translateX(${gallery.getBoundingClientRect().top}px)`});
+    }else{
+        if(isAtTheTop()){
+          gsap.set(inner, {position: "absolute", bottom: "auto", top: centerPx}) 
+        }else{
+          gsap.set(inner, {position: "absolute", top: "auto", bottom: centerPx}) 
+        }
+    }
+    requestAnimationFrame(scroll)
   }
 
   function changeFull(name, link){
@@ -42,7 +67,7 @@ const Gallery = (props) => {
 
   return (<div className="Gallery" ref={gallery}>
     <Minimap setmap={el => map = el} name={currentFull.name} link={currentFull.link}></Minimap>
-    {imageElements}
+    <div className="Gallery-inner" ref={inner}>{imageElements}</div> 
   </div>)
 };
 

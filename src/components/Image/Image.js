@@ -31,13 +31,13 @@ const Image = (props) => {
   }
 
   return (
-      <div
+      <figure
         ref={thumb}
         className="map__thumb"
         style={{ backgroundImage: `url(${props.link})` }}
         onClick={handleClick}
         onMouseMove={moveCursor}
-      ></div>
+      ></figure>
 
   );
 }
