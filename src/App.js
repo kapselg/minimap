@@ -52,10 +52,8 @@ function App() {
   ];
   return (
     <div className="App">
-      <div className="filler"></div>
       <Cursor></Cursor>
       <Gallery images={imagesArray}></Gallery>
-      <div className="filler"></div>
     </div>
   );
 }
