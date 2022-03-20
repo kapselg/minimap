@@ -6,13 +6,11 @@
   display: grid;
   place-items: center-top;
   position: relative;
+
 }
 .Gallery-inner{
   height: 500px;
   left: 0
-}
-.Gallery > *{
-  pointer-events: none;
 }
 *::-webkit-scrollbar {
   width: 30px;

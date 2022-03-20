@@ -5,29 +5,34 @@ import { gsap } from "gsap";
 
 const Image = (props) => {
   const thumb = useRef(null);
-  const [isIn, setIn] = useState(false);
+  const [isShown, setShown] = useState(false);
 
   function handleClick(e){
-    if(isIn){
-      const thumbs = document.querySelectorAll(".map__thumb");
-      thumbs.forEach((el) => gsap.set(el, { opacity: 1 }));
-      setIn(false)
-      gsap.set(document.getElementById("map__cursor"), {display: "none"})
-      props.changeFull({})
+    console.log("click");
+    if(isShown){
+      hide(e)
     }else{
-      const thumbs = document.querySelectorAll(".map__thumb");
-      thumbs.forEach((el) => gsap.set(el, { opacity: 0 }));
-      setIn(true)
-      props.changeFull(props.name, props.link)
+      show(e)
     }
   }
 
-  /**
-   * @param {MouseEvent} e 
-   */
+  function show(e){
+    const thumbs = document.querySelectorAll(".map__thumb");
+    thumbs.forEach((el) => gsap.set(el, { opacity: 0 }));
+    setShown(true)
+    props.changeFull(props.name, props.link)
+  }
+
+  function hide(e){
+    const thumbs = document.querySelectorAll(".map__thumb");
+    thumbs.forEach((el) => gsap.set(el, { opacity: 1 }));
+    setShown(false)
+    gsap.set(document.getElementById("map__cursor"), {display: "none"})
+    props.changeFull({})
+  }
   
   function moveCursor(e){
-    if(isIn) props.moveCursor(thumb.current, e)
+    if(isShown) props.moveCursor(thumb.current, e)
   }
 
   return (
@@ -37,6 +42,7 @@ const Image = (props) => {
         style={{ backgroundImage: `url(${props.link})` }}
         onClick={handleClick}
         onMouseMove={moveCursor}
+        onMouseLeave={hide}
       ></figure>
 
   );
