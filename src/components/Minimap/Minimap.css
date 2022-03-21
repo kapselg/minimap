@@ -1,6 +1,7 @@
 .mmap{
+  z-index: 200;
   position: absolute;
-  width: 60px;
+  width: 100px;
   height: 100px;
   bottom: 10%;
   right: 10%;
@@ -14,10 +15,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border: 2px white solid;
 }
-
 .map__image{
-  width: 100%;
+  z-index: 100;
   height: 100%;
+  width: 100%;
   object-fit: cover;
 }
+

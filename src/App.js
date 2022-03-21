@@ -14,40 +14,36 @@ function App() {
   }
   const imagesArray = [
     new Image(
-      "grass",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Grass-JW.jpg/640px-Grass-JW.jpg"
+      "1",
+      "https://i.ibb.co/Bfzt7YP/1.jpg"
     ),
     new Image(
-      "tree",
-      "https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg"
+      "3",
+      "https://i.ibb.co/g9g1M2X/3.jpg"
     ),
     new Image(
-      "flower",
-      "https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg"
+      "4",
+      "https://i.ibb.co/86MRSSS/4.jpg"
     ),
     new Image(
-      "flower",
-      "https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg"
+      "5",
+      "https://i.ibb.co/Jrhm1yf/5.jpg"
     ),
     new Image(
-      "flower",
-      "https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg"
+      "6",
+      "https://i.ibb.co/rMFqxsm/6.jpg"
     ),
     new Image(
-      "flower",
-      "https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg"
+      "7",
+      "https://i.ibb.co/ZK7hzHZ/7.jpg"
     ),
     new Image(
-      "flower",
-      "https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg"
+      "8",
+      "https://i.ibb.co/By9SbfH/8.jpg"
     ),
     new Image(
-      "flower",
-      "https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg"
-    ),
-    new Image(
-      "flower",
-      "https://cdn.britannica.com/84/73184-004-E5A450B5/Sunflower-field-Fargo-North-Dakota.jpg"
+      "9",
+      "https://i.ibb.co/QQRbKHH/9.jpg"
     ),
   ];
   return (

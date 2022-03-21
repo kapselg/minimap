@@ -32,7 +32,7 @@ const Gallery = (props) => {
     const cursor = document.getElementById("map__cursor")
     gsap.set(cursor, {
       x: ((e.pageX - tRect.x) / ratio) + mRect.x - cursor.clientWidth/2,
-      y: ((e.screenY - tRect.y) / ratio) + mRect.y + window.scrollY - cursor.clientHeight*1.5,
+      y: ((e.screenY - tRect.y) / ratio) + mRect.y + window.scrollY - cursor.clientHeight*2.5,
 
       display: "block"
     })

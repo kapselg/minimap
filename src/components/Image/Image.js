@@ -18,14 +18,14 @@ const Image = (props) => {
 
   function show(e){
     const thumbs = document.querySelectorAll(".map__thumb");
-    thumbs.forEach((el) => gsap.set(el, { opacity: 0 }));
+    thumbs.forEach((el) => gsap.set(el, { opacity: 0, cursor: "none" }));
     setShown(true)
     props.changeFull(props.name, props.link)
   }
 
   function hide(e){
     const thumbs = document.querySelectorAll(".map__thumb");
-    thumbs.forEach((el) => gsap.set(el, { opacity: 1 }));
+    thumbs.forEach((el) => gsap.set(el, { opacity: 1, cursor: "default" }));
     setShown(false)
     gsap.set(document.getElementById("map__cursor"), {display: "none"})
     props.changeFull({})
@@ -40,7 +40,7 @@ const Image = (props) => {
         ref={thumb}
         className="map__thumb"
         style={{ backgroundImage: `url(${props.link})` }}
-        onClick={handleClick}
+        onMouseEnter={handleClick}
         onMouseMove={moveCursor}
         onMouseLeave={hide}
       ></figure>

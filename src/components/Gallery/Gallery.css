@@ -6,10 +6,10 @@
   display: grid;
   place-items: center-top;
   position: relative;
-
+  z-index: 100;
 }
 .Gallery-inner{
-  height: 500px;
+  height: fit-content;
   left: 0
 }
 *::-webkit-scrollbar {
